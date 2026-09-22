@@ -748,155 +748,204 @@ section {
         width: 200px;
         height: 230px;
     }
-}
 /* ==========================================
-   PERBAIKAN TAMPILAN KHUSUS HP & TABLET
+   FIX TOTAL UNTUK LAYAR HP (MOBILE)
    ========================================== */
 
-/* Mencegah layar bisa di-scroll ke samping (Overflow Fix) */
+/* Mencegah layar bergeser/melebar ke samping */
 html, body {
-    max-width: 100%;
-    overflow-x: hidden;
+    max-width: 100vw;
+    overflow-x: hidden !important;
 }
 
 @media (max-width: 768px) {
-    
-    /* 1. Navbar HP */
-    header {
-        width: 92%;
-        padding: 0.6rem 1rem;
-        top: 0.8rem;
+
+    /* 1. PERBAIKAN HEADER / NAVBAR */
+    .header {
+        width: 95% !important; /* Membuat pill navbar pas di tengah layar HP */
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        padding: 0.5rem 0.8rem !important;
+        top: 0.6rem !important;
     }
 
     .nav-links {
-        gap: 0.8rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        gap: 0.3rem !important; /* Memperkecil jarak antar menu agar muat */
     }
 
-    .nav-links a {
-        font-size: 0.8rem;
+    .nav-links li a {
+        font-size: 0.72rem !important; /* Ukuran font menu lebih kecil agar muat 1 baris */
+        padding: 0.3rem 0.4rem !important;
+        white-space: nowrap;
     }
 
-    /* 2. Section Home / Hero */
+    /* Sembunyikan ikon hamburger jika tidak pakai JS */
+    #menu-icon {
+        display: none !important;
+    }
+
+    /* 2. PERBAIKAN SECTION HOME (HERO) */
     .home {
-        min-height: auto;
-        padding: 7rem 6% 3rem;
+        padding: 6rem 5% 2rem !important;
+        min-height: auto !important;
     }
 
     .home-container {
-        flex-direction: column;
-        text-align: center;
-        gap: 2rem;
+        flex-direction: column !important;
+        text-align: center !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 1.5rem !important;
+        width: 100% !important;
     }
 
     .home-container img {
-        width: 180px;
-        height: 180px;
-        margin: 0 auto;
+        width: 160px !important;
+        height: 160px !important;
+        margin: 0 auto !important;
     }
 
+    .info-box {
+        width: 100% !important;
+    }
+
+    .info-box .text h3 {
+        font-size: 1.1rem !important;
+    }
+
+    /* Ukuran Judul Nama disesuaikan agar tidak meluap ke kanan */
     .info-box .text h1 {
-        font-size: 2rem;
+        font-size: 1.8rem !important;
+        line-height: 1.2 !important;
+        word-wrap: break-word;
+    }
+
+    .info-box .text span {
+        font-size: 1.1rem !important;
     }
 
     .info-box .text p {
-        font-size: 0.9rem;
-        line-height: 1.5;
+        font-size: 0.85rem !important;
+        line-height: 1.5 !important;
+        padding: 0 0.5rem;
     }
 
-    .socials {
+    .btn-group {
+        display: flex;
         justify-content: center;
-        gap: 1rem;
+        margin-top: 1rem;
     }
 
-    /* 3. Section About Me */
+    .btn {
+        padding: 0.6rem 1.5rem !important;
+        font-size: 0.85rem !important;
+    }
+
+    /* Ikon Sosial Media */
+    .socials {
+        display: flex;
+        justify-content: center !important;
+        gap: 0.8rem !important;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+    }
+
+    .socials a {
+        width: 38px !important;
+        height: 38px !important;
+        font-size: 1.1rem !important;
+    }
+
+    /* 3. PERBAIKAN SECTION ABOUT */
     .about-section {
-        padding: 4rem 6% 2rem;
+        padding: 3.5rem 5% 2rem !important;
     }
 
     .about-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 2rem;
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 1.5rem !important;
     }
 
     .about-img img {
-        width: 200px;
-        height: auto;
-        margin: 0 auto;
+        width: 180px !important;
+        height: auto !important;
     }
 
-    /* 4. Section Skills */
+    .about-text h3 {
+        font-size: 1.2rem !important;
+    }
+
+    .about-text p {
+        font-size: 0.85rem !important;
+        line-height: 1.5 !important;
+    }
+
+    /* 4. PERBAIKAN SKILLS SECTION */
     .skills-section {
-        padding: 4rem 6% 2rem;
+        padding: 3.5rem 5% 2rem !important;
     }
 
     .skills-container {
-        flex-direction: column;
-        gap: 2rem;
-        text-align: center;
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 1.5rem !important;
     }
 
     .skills-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 Kolom rapi di HP */
-        gap: 0.8rem;
-        width: 100%;
+        grid-template-columns: repeat(2, 1fr) !important; /* 2 Kolom Sejajar */
+        gap: 0.8rem !important;
+        width: 100% !important;
     }
 
-    /* Menghilangkan offset tangga/asimetris di HP agar tidak offscreen */
     .skills-grid .skill-card:nth-child(even) {
-        transform: translateY(0) !important;
+        transform: translateY(0) !important; /* Menghilangkan posisi anak tangga agar rapi */
     }
 
     .skill-card {
-        padding: 0.8rem 1rem;
-        font-size: 0.9rem;
+        padding: 0.7rem 0.5rem !important;
+        font-size: 0.8rem !important;
     }
 
-    /* 5. Section Projects */
+    /* 5. PERBAIKAN PROJECTS SECTION */
     .projects-section {
-        padding: 4rem 6% 2rem;
+        padding: 3.5rem 5% 2rem !important;
     }
 
     .projects-container {
-        grid-template-columns: 1fr; /* Jadi 1 kolom vertikal */
-        gap: 1.8rem;
-    }
-
-    .project-card {
-        padding: 1.2rem;
-    }
-
-    .project-img {
-        height: 180px; /* Tinggi foto pas di HP */
+        grid-template-columns: 1fr !important; /* 1 Kolom Vertikal */
+        gap: 1.5rem !important;
     }
 
     .coming-soon-btn {
-        width: 100%;
-        padding: 0.8rem 1rem;
-        font-size: 0.9rem;
+        width: 100% !important;
     }
 
-    /* 6. Section Contact & Form */
+    /* 6. PERBAIKAN CONTACT FORM */
     .contact-section {
-        padding: 4rem 6% 3rem;
+        padding: 3.5rem 5% 3rem !important;
     }
 
     .contact-form {
-        width: 100%;
+        width: 100% !important;
     }
 
     .submit-btn {
-        width: 100%;
+        width: 100% !important;
     }
 }
 
-/* Layar HP Sangat Sempit (Max Width: 480px) */
-@media (max-width: 480px) {
-    .skills-grid {
-        grid-template-columns: 1fr; /* 1 Kolom jika HP sangat kecil */
+/* Layar HP Sangat Sempit (< 380px) */
+@media (max-width: 380px) {
+    .nav-links li a {
+        font-size: 0.65rem !important;
+        padding: 0.2rem 0.3rem !important;
     }
-
-    .nav-links a {
-        font-size: 0.72rem;
+    .info-box .text h1 {
+        font-size: 1.5rem !important;
     }
 }
