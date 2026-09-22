@@ -749,3 +749,154 @@ section {
         height: 230px;
     }
 }
+/* ==========================================
+   PERBAIKAN TAMPILAN KHUSUS HP & TABLET
+   ========================================== */
+
+/* Mencegah layar bisa di-scroll ke samping (Overflow Fix) */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+    
+    /* 1. Navbar HP */
+    header {
+        width: 92%;
+        padding: 0.6rem 1rem;
+        top: 0.8rem;
+    }
+
+    .nav-links {
+        gap: 0.8rem;
+    }
+
+    .nav-links a {
+        font-size: 0.8rem;
+    }
+
+    /* 2. Section Home / Hero */
+    .home {
+        min-height: auto;
+        padding: 7rem 6% 3rem;
+    }
+
+    .home-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .home-container img {
+        width: 180px;
+        height: 180px;
+        margin: 0 auto;
+    }
+
+    .info-box .text h1 {
+        font-size: 2rem;
+    }
+
+    .info-box .text p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .socials {
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    /* 3. Section About Me */
+    .about-section {
+        padding: 4rem 6% 2rem;
+    }
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .about-img img {
+        width: 200px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    /* 4. Section Skills */
+    .skills-section {
+        padding: 4rem 6% 2rem;
+    }
+
+    .skills-container {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 Kolom rapi di HP */
+        gap: 0.8rem;
+        width: 100%;
+    }
+
+    /* Menghilangkan offset tangga/asimetris di HP agar tidak offscreen */
+    .skills-grid .skill-card:nth-child(even) {
+        transform: translateY(0) !important;
+    }
+
+    .skill-card {
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    /* 5. Section Projects */
+    .projects-section {
+        padding: 4rem 6% 2rem;
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr; /* Jadi 1 kolom vertikal */
+        gap: 1.8rem;
+    }
+
+    .project-card {
+        padding: 1.2rem;
+    }
+
+    .project-img {
+        height: 180px; /* Tinggi foto pas di HP */
+    }
+
+    .coming-soon-btn {
+        width: 100%;
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    /* 6. Section Contact & Form */
+    .contact-section {
+        padding: 4rem 6% 3rem;
+    }
+
+    .contact-form {
+        width: 100%;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+}
+
+/* Layar HP Sangat Sempit (Max Width: 480px) */
+@media (max-width: 480px) {
+    .skills-grid {
+        grid-template-columns: 1fr; /* 1 Kolom jika HP sangat kecil */
+    }
+
+    .nav-links a {
+        font-size: 0.72rem;
+    }
+}
