@@ -790,7 +790,6 @@ html, body {
         font-size: 0.85rem !important;
     }
 
-    /* Ikon Sosial Media */
     .socials {
         display: flex;
         justify-content: center !important;
@@ -805,7 +804,6 @@ html, body {
         font-size: 1.1rem !important;
     }
 
-    /* 3. PERBAIKAN SECTION ABOUT */
     .about-section {
         padding: 3.5rem 5% 2rem !important;
     }
@@ -830,7 +828,6 @@ html, body {
         line-height: 1.5 !important;
     }
 
-    /* 4. PERBAIKAN SKILLS SECTION */
     .skills-section {
         padding: 3.5rem 5% 2rem !important;
     }
@@ -856,7 +853,6 @@ html, body {
         font-size: 0.8rem !important;
     }
 
-    /* 5. PERBAIKAN PROJECTS SECTION */
     .projects-section {
         padding: 3.5rem 5% 2rem !important;
     }
@@ -870,7 +866,6 @@ html, body {
         width: 100% !important;
     }
 
-    /* 6. PERBAIKAN CONTACT FORM */
     .contact-section {
         padding: 3.5rem 5% 3rem !important;
     }
